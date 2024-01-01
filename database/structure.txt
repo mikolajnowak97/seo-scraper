@@ -1,0 +1,31 @@
+-- Table: public.googlemapsrecord
+
+DROP TABLE IF EXISTS public.googlemapsrecord;
+
+CREATE TABLE IF NOT EXISTS public.googlemapsrecord
+(
+    id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    uuid character varying(50) COLLATE pg_catalog."default",
+    created timestamp without time zone NOT NULL DEFAULT now(),
+    displayname character varying(200) COLLATE pg_catalog."default",
+    place_url character varying(500) COLLATE pg_catalog."default",
+    category character varying(200) COLLATE pg_catalog."default",
+    street character varying(200) COLLATE pg_catalog."default",
+    phone character varying(50) COLLATE pg_catalog."default",
+    website character varying(200) COLLATE pg_catalog."default",
+    description character varying(500) COLLATE pg_catalog."default",
+    icon_url character varying(500) COLLATE pg_catalog."default",
+    rating numeric(2,1),
+    reviews integer,
+    lat numeric(8,5),
+    lng numeric(8,5),
+    search_order integer,
+    search_url character varying(500) COLLATE pg_catalog."default",
+    search_phrase character varying(200) COLLATE pg_catalog."default",
+    CONSTRAINT googlemapsrecord_pkey PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.googlemapsrecord
+    OWNER to postgres;

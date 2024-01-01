@@ -2,6 +2,7 @@ class Selectors():
 
     css_results = "[role='feed']"
     css_results_end = "span.HlvSq"
+    css_results_loading = "div.qjESne"
     css_results_item = "div.Nv2PK"
     css_results_item_full_name = "div.qBF1Pd"
     css_results_item_place_url = "a.hfpxzc"
@@ -11,6 +12,7 @@ class Selectors():
     css_results_item_phone = "span.UsdlK"
     css_results_item_category_street = "div.W4Efsd div.W4Efsd:nth-child(1)"
     css_results_item_description = "div.W4Efsd div.W4Efsd:nth-child(2)"
+    css_results_item_icon = "div.p0Hhde.FQ2IWe img"
 
 
     xpath_google_accept_all = "//span[text()='Zaakceptuj wszystko']"

@@ -10,7 +10,7 @@ class GoogleMapsRecord():
 
     def exists(self):
         cur = self.connection.cursor(cursor_factory=RealDictCursor)
-        cur.execute(f"SELECT EXISTS(SELECT 1 FROM public.googlemapsrecord WHERE searchphrase='{self.searchphrase}' AND displayname='{self.displayname}')")
+        cur.execute(f"SELECT EXISTS(SELECT 1 FROM public.googlemapsrecord WHERE search_phrase='{self.search_phrase}' AND displayname='{self.displayname}' AND search_order={self.search_order})")
         record = cur.fetchone()
         cur.close()
         return record['exists']
@@ -18,7 +18,7 @@ class GoogleMapsRecord():
     def insert(self):
         cur = self.connection.cursor()
         cur.execute("""
-                    INSERT INTO public.googlemapsrecord(searchphrase, search_order, displayname, place_url, category, street, phone, website, description, rating, reviews, lat, lng)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);""",
-                    (self.searchphrase, self.search_order, self.displayname, self.place_url, self.category, self.street, self.phone, self.website, self.description, self.rating, self.reviews, self.lat, self.lng))
+                    INSERT INTO public.googlemapsrecord(uuid, search_phrase, search_url, search_order, displayname, place_url, category, street, phone, website, description, icon_url, rating, reviews, lat, lng)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);""",
+                    (self.uuid, self.search_phrase, self.search_url, self.search_order, self.displayname, self.place_url, self.category, self.street, self.phone, self.website, self.description, self.icon_url, self.rating, self.reviews, self.lat, self.lng))
         cur.close()
