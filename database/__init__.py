@@ -6,7 +6,7 @@ class DatabaseConnection:
     def __init__(self):
         print('Connecting to the PostgreSQL database...')
         self.connection = psycopg2.connect(
-            database="seo-scrapper",
+            database="seo-scraper",
             host="localhost",
             port="5432",
             user="postgres",

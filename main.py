@@ -1,4 +1,4 @@
-from google.scrapper import GoogleMapsScrapper
+from google.scraper import GoogleMapsScraper
 
 search_phrases = [
     "pokoje gościnne darłówko",
@@ -11,7 +11,7 @@ search_phrases = [
     "noclegi darłowo",
 ]
 
-gms = GoogleMapsScrapper()
+gms = GoogleMapsScraper()
 for search_phrase in search_phrases:
     gms.scrap(search_phrase)
 

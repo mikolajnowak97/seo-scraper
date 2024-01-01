@@ -16,7 +16,7 @@ from database import DatabaseConnection
 from database.models import GoogleMapsRecord
 
 
-class GoogleMapsScrapper():
+class GoogleMapsScraper():
 
     def __init__(self):
         database = DatabaseConnection()
