@@ -1,0 +1,13 @@
+__pycache__/
+/venv/
+/.idea
+/.vscode
+/encryption_pass.key
+/staticfiles
+.env
+*.kdbx
+.log
+/tmp/django_cache
+/tmp/*.pdf
+/tmp/*.csv
+/tmp/*/*
