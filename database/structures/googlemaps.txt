@@ -1,6 +1,6 @@
--- Table: public.googlemapsrecord
+-- Table: public.googlemaps
 
-DROP TABLE IF EXISTS public.googlemapsrecord;
+DROP TABLE IF EXISTS public.googlemaps;
 
 CREATE TABLE IF NOT EXISTS public.googlemaps
 (
@@ -22,10 +22,10 @@ CREATE TABLE IF NOT EXISTS public.googlemaps
     search_order integer,
     search_url character varying(500) COLLATE pg_catalog."default",
     search_phrase character varying(200) COLLATE pg_catalog."default",
-    CONSTRAINT googlemapsrecord_pkey PRIMARY KEY (id)
+    CONSTRAINT googlemaps_pkey PRIMARY KEY (id)
 )
 
 TABLESPACE pg_default;
 
-ALTER TABLE IF EXISTS public.googlemapsrecord
+ALTER TABLE IF EXISTS public.googlemaps
     OWNER to postgres;

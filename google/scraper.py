@@ -11,9 +11,9 @@ from decimal import Decimal
 
 import chromedriver_autoinstaller, time, uuid, re
 
-from google.selectors import Selectors
 from database import DatabaseConnection
-from database.models import GoogleMapsRecord
+from google.selectors import Selectors
+from google.models import GoogleMaps
 
 
 class GoogleMapsScraper():
@@ -131,7 +131,7 @@ class GoogleMapsScraper():
         i = 1
         print('Processing data...')
         for record in self.results:
-            gmr = GoogleMapsRecord(self.connection)
+            gmr = GoogleMaps(self.connection)
             gmr.search_phrase = self.search_phrase
             gmr.search_url = self.search_url
             gmr.uuid = self.uuid
@@ -154,6 +154,9 @@ class GoogleMapsScraper():
                 gmr.insert()
 
         print('All data processed!')
+
+    def exit(self):
+        self.connection.close()
 
     def scrap(self, search_phrase):
         print('---------------------------')

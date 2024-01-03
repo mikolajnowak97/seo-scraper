@@ -1,18 +1,10 @@
-from google.scraper import GoogleMapsScraper
+from website.scraper import WebsiteScraper
 
-search_phrases = [
-    "pokoje gościnne darłówko",
-    "domki darłówko",
-    "darłówko domki",
-    "pokoje darłówko",
-    "noclegi darłówko",
-    "kwatery darłówko",
-    "darłowo domki",
-    "noclegi darłowo",
-]
 
-gms = GoogleMapsScraper()
-for search_phrase in search_phrases:
-    gms.scrap(search_phrase)
+urls = []
 
-gms.connection.close()
+bss = WebsiteScraper()
+for url in urls:
+    bss.scrap(url)
+
+bss.exit()
